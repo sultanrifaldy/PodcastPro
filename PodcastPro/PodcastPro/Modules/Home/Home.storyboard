@@ -11,19 +11,60 @@
         <!--Home-->
         <scene sceneID="ObN-Z5-sMf">
             <objects>
-                <viewController storyboardIdentifier="navHome" id="DfR-Ab-ySx" customClass="HomeViewController" customModule="PodcastPro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="navHome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DfR-Ab-ySx" customClass="HomeViewController" customModule="PodcastPro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mrP-oq-0Jp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="g3b-2d-0Yu">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell_id" textLabel="5he-N7-pYv" detailTextLabel="92d-Pl-zt0" rowHeight="73" style="IBUITableViewCellStyleSubtitle" id="Eaj-4d-80y">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="73"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Eaj-4d-80y" id="JIU-es-4Iv">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="73"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5he-N7-pYv">
+                                                    <rect key="frame" x="20" y="21" width="25" height="14.333333333333334"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="92d-Pl-zt0">
+                                                    <rect key="frame" x="19.999999999999996" y="37.333333333333336" width="43.666666666666664" height="14.333333333333334"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="BZf-Xf-v6H"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="g3b-2d-0Yu" firstAttribute="top" secondItem="mrP-oq-0Jp" secondAttribute="top" id="GZw-gB-CGc"/>
+                            <constraint firstAttribute="bottom" secondItem="g3b-2d-0Yu" secondAttribute="bottom" id="OQ9-zg-FGR"/>
+                            <constraint firstItem="g3b-2d-0Yu" firstAttribute="trailing" secondItem="BZf-Xf-v6H" secondAttribute="trailing" id="rl8-Hw-V96"/>
+                            <constraint firstItem="g3b-2d-0Yu" firstAttribute="leading" secondItem="BZf-Xf-v6H" secondAttribute="leading" id="zth-dG-4pZ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="cbC-2N-3ng"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="g3b-2d-0Yu" id="KJ8-Qw-fEJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FrP-dk-ZwJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="979" y="39"/>
+            <point key="canvasLocation" x="977.86259541984725" y="38.732394366197184"/>
         </scene>
     </scenes>
     <resources>
