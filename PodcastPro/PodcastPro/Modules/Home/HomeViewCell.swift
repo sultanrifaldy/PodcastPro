@@ -14,6 +14,8 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var moreButtonLabel: UIButton!
     
+    weak var delegate: HomeViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,7 +32,13 @@ class HomeViewCell: UITableViewCell {
         thumbImageView.layer.cornerRadius = 3
         thumbImageView.layer.masksToBounds = true
     }
-
+    @IBAction func moreButtonTapped(_ sender: Any) {
+        delegate?.HomeViewCellDelegateMoreButtonTapped(cell: self)
+    }
+    
 }
 
+protocol HomeViewCellDelegate: NSObjectProtocol {
+    func HomeViewCellDelegateMoreButtonTapped(cell: HomeViewCell)
+}
 
